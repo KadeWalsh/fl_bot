@@ -1,0 +1,273 @@
+[
+    {
+        "name": "idle",
+        "description": "Check for idle tasks",
+        "tasks": [
+            {
+                "name": "energy_badge",
+                "description": "check for badge on stamina bar",
+                "trigger": {
+                    "area": [
+                        130,
+                        159,
+                        151,
+                        180
+                    ],
+                    "color": "FF1738"
+                },
+                "click": [
+                    90,
+                    180
+                ],
+                "next": {
+                    "name": "collect_stamina",
+                    "description": "Collect free stamina points 2x daily",
+                    "click": [
+                        885,
+                        575
+                    ],
+                    "new_screen": "false",
+                    "next": {
+                        "name": "exit_stamina",
+                        "description": "Exit stamina window after collecting stamina",
+                        "click": [
+                            1000,
+                            215
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "VIP points",
+                "description": "check for free VIP points",
+                "trigger": {
+                    "area": [
+                        100,
+                        215,
+                        122,
+                        236
+                    ],
+                    "color": "FF1738"
+                },
+                "click": [
+                    75,
+                    260
+                ],
+                "new_screen": "True",
+                "next": {
+                    "name": "collect vip",
+                    "description": "Collect daily VIP points",
+                    "click": [
+                        955,
+                        345
+                    ],
+                    "next": {
+                        "name": "dismiss popup",
+                        "description": "dissmiss popup confirmation message",
+                        "click": [
+                            90,
+                            1810
+                        ],
+                        "next": {
+                            "name": "exit VIP window",
+                            "description": "Exit VIP window after collecting points",
+                            "click": [
+                                90,
+                                1810
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Alliance",
+                "description": "Check for Help button before opening Alliance window",
+                "trigger": {
+                    "area": [
+                        775,
+                        1290,
+                        918,
+                        1415
+                    ],
+                    "color": "f0b66a"
+                },
+                "click": [
+                    980,
+                    1345
+                ],
+                "next": [
+                    {
+                        "name": "help",
+                        "description": "Click help button to open help window",
+                        "trigger": {
+                            "area": [
+                                990,
+                                675,
+                                1030,
+                                715
+                            ],
+                            "color": "ff1738"
+                        },
+                        "click": [
+                            1010,
+                            695
+                        ],
+                        "next": {
+                            "name": "help_all_btn",
+                            "description": "Click the 'HELP ALL' button",
+                            "click": [
+                                540,
+                                1470
+                            ],
+                            "next": {
+                                "name": "close_help",
+                                "description": "Exit the help window",
+                                "click": [
+                                    990,
+                                    355
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "gifts",
+                        "description": "Check for gifts badge and click if visible",
+                        "trigger": {
+                            "area": [
+                                490,
+                                845,
+                                528,
+                                885
+                            ],
+                            "color": "ff1738"
+                        },
+                        "click": [
+                            335,
+                            910
+                        ],
+                        "next": {
+                            "name": "regular_gifts",
+                            "description": "check for regular gift badge and collect if visible",
+                            "trigger": {
+                                "area": [
+                                    518,
+                                    412,
+                                    552,
+                                    535
+                                ],
+                                "color": "ff1738"
+                            },
+                            "click": [
+                                540,
+                                1795
+                            ],
+                            "next": {
+                                "name": "premium_gifts",
+                                "description": "Check for premium gift badge",
+                                "trigger": {
+                                    "area": [
+                                        1028,
+                                        412,
+                                        1065,
+                                        535
+                                    ],
+                                    "color": "ff1738"
+                                },
+                                "click": [
+                                    800,
+                                    475
+                                ],
+                                "next": {
+                                    "name": "claim_all",
+                                    "description": "Claim premium gifts",
+                                    "click": [
+                                        885,
+                                        1790
+                                    ],
+                                    "next": {
+                                        "name": "dismiss popup",
+                                        "description": "Dismiss regular gift contents popup",
+                                        "click": [
+                                            885,
+                                            1790
+                                        ],
+                                        "next": {
+                                            "name": "dismiss popup",
+                                            "description": "dismiss gift contents popup",
+                                            "click": [
+                                                90,
+                                                1815
+                                            ],
+                                            "next": {
+                                                "name": "back_button",
+                                                "description": "Exit gifts window after claiming gifts",
+                                                "click": [
+                                                    90,
+                                                    1815
+                                                ],
+                                                "next": {
+                                                    "click": [
+                                                        90,
+                                                        1815
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "alliance_tech",
+                        "description": "check for alliance tech badge",
+                        "trigger": {
+                            "area": [
+                                990,
+                                970,
+                                1030,
+                                1010
+                            ],
+                            "color": "ff1738"
+                        },
+                        "click": [
+                            805,
+                            1095
+                        ],
+                        "next": {
+                            "name": "tech donations",
+                            "description": "Check for tech donation badge",
+                            "trigger": {
+                                "size": [
+                                    56,
+                                    48
+                                ],
+                                "color": "f6422a"
+                            },
+                            "click": [
+                                540,
+                                1790
+                            ],
+                            "next": {
+                                "name": "back_button",
+                                "description": "Exit tech donation window",
+                                "click": [
+                                    1000,
+                                    230
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "exit_alliance",
+                        "description": "Exit the alliance window",
+                        "click": [
+                            90,
+                            1810
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
